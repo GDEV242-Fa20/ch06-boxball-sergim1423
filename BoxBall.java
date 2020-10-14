@@ -44,18 +44,31 @@ public class BoxBall
     ballColor,int box_width,int box_height,Canvas drawingCanvas)
     
     {
-        if (xPos >
+        if (xPos >= box_width)
+        xPosition = xPos - const_Distance;
+        else
+        xPosition = xPos;
+        if (yPos >= box_height)
+        yPosition = yPos - const_Distance;
+        else
+        yPosition = yPos;
+        color= ballColor;
+        diameter = ballDiameter;
+        width = box_width;
+        height = box_height;
+        canvas = drawingCanvas;
+        xSpeed = (int) (Math.random() * 20) + 1;
+        ySpeed = (int) (Math.random() * 20) + 1;
+        
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Draw this ball at its current position onto the canvas.
+    
      */
-    public int sampleMethod(int y)
+    public void draw()
     {
-        // put your code here
-        return x + y;
+      canvas.setForegroundColor(color);
+      canvas.fillCircle(xPosition, yPosition, 4 diameter);
     }
 }
