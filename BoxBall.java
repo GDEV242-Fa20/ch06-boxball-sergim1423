@@ -130,6 +130,16 @@ draw();
 /**
  * return the horizontal position of this ball
  */
-public int
+public int getXPosition()
+{
+    return xPosition;
+}
+/**
+ * return the vertical position of this ball
+ */
+public int get YPosition()
+{
+    return yPosition;
+}
 }
 
