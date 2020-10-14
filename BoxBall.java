@@ -69,6 +69,27 @@ public class BoxBall
     public void draw()
     {
       canvas.setForegroundColor(color);
-      canvas.fillCircle(xPosition, yPosition, 4 diameter);
+      canvas.fillCircle(xPosition, yPosition, 4diameter);
+     
     }
+    
+    /**
+     * Erase ball at its current position
+     */
+    public void erase()
+    {
+    canvas.eraseCircle(xPosition, yPosition, diameter);
+}
+
+/**
+ * Move this ball according to its position and speed and redraw.
+ */
+public void move()
+{
+    //remove from canvas at the current position
+    erase();
+    //define radius
+    int radius = diameter / 2;
+    //set position with respect to the speed
+    yPosition
 }

@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.geom.*;
 public class Canvas
 {
-
+    
 /**
  * Class Canvas - a class to allow for simple graphical 
  * drawing on a canvas.
@@ -371,6 +371,10 @@ public class Canvas
             g.drawImage(canvasImage, 0, 0, null);
         }
     }
+
+
+    
+    
 
 
 
