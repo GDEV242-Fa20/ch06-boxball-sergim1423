@@ -137,7 +137,7 @@ public int getXPosition()
 /**
  * return the vertical position of this ball
  */
-public int get YPosition()
+public int getYPosition()
 {
     return yPosition;
 }
