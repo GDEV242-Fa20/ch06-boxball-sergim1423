@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.*;
+public class Canvas
+{
 
 /**
  * Class Canvas - a class to allow for simple graphical 
@@ -134,6 +136,14 @@ public class Canvas
     {
         fill(new Rectangle(xPos, yPos, width, height));
     }
+
+    public void drawRectangle (int x1, int y1, int width,
+    int height)
+    {
+        graphic.drawRect (x1, y1, width, height) ;
+        canvas.repaint() ; 
+    }
+}
 
     /**
      * Erase the whole canvas.
@@ -361,4 +371,6 @@ public class Canvas
             g.drawImage(canvasImage, 0, 0, null);
         }
     }
-}
+
+
+
