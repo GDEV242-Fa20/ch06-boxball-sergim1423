@@ -91,5 +91,45 @@ public void move()
     //define radius
     int radius = diameter / 2;
     //set position with respect to the speed
-    yPosition
+    yPosition += ySpeed;
+    xPosition += xSpeed;
+    //if x position of the ball is less than zero, 
+    //then alter the speed and set the x position of ball
+    if (xPosition - radius - const_Distance < 0)
+    {
+        //Bouncing the ball with in the walls of box
+        xSpeed = -xSpeed;
+        xPosition = radius + const_Distance;
+    }
+    //if the x position of the ball is greater than or equal
+    // to width, then alter the speed and set the x position of
+    // the ball
+    else if (xPostion + radius >= width)
+    {
+        xSpeed = -xSpeed;
+        xPosition = width - radius;
+    }
+    //if the y position of the ball is less than zero, then alter
+    //the speed and set the y position of the ball
+    if (yPosition - radius - const_Distance <=0)
+    {
+        ySpeed = -ySpeed;
+        yPosition = radius + const_Distance;
+    }
+    //if the y postion of the ball is greater than or equal
+    // to height, alter the speed and set the y position
+    //of the ball
+    else if (yPosition + radius >= height)
+{
+    ySpeed = -ySpeed;
+    yPosition = height - radius;
 }
+//draw again at new position
+draw();
+}
+/**
+ * return the horizontal position of this ball
+ */
+public int
+}
+
