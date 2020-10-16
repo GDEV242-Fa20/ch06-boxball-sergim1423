@@ -20,7 +20,7 @@ public class BoxBall
     private Canvas canvas;
     private int ySpeed;
     private int xSpeed;
-    private in const_Distance = 10;
+    private int const_Distance = 10;
     private int diameter;
 
     /**
@@ -69,7 +69,7 @@ public class BoxBall
     public void draw()
     {
       canvas.setForegroundColor(color);
-      canvas.fillCircle(xPosition, yPosition, 4diameter);
+      canvas.fillCircle(xPosition, yPosition, 4);
      
     }
     
@@ -104,7 +104,7 @@ public void move()
     //if the x position of the ball is greater than or equal
     // to width, then alter the speed and set the x position of
     // the ball
-    else if (xPostion + radius >= width)
+    else if (xPosition + radius >= width)
     {
         xSpeed = -xSpeed;
         xPosition = width - radius;

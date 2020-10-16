@@ -60,41 +60,58 @@ public void bounce(int numberOfBalls)
             boxBall.move();
             //stop once ball has traveled a certian distance
             //on x axis
-            if(bocBall.getXPosition() >= boxheight + 
+            if(boxBall.getXPosition() >= boxheight + 
             30 * numberOfBalls)
             {
                 finished= true;
             }
-    
-    /**
-     * Simulate two bouncing balls
-     */
-    public void bounce()
-    {
-        int ground = 400;   // position of the ground line
-
-        myCanvas.setVisible(true);
-
-        // draw the ground
-        myCanvas.setForegroundColor(Color.BLACK);
-        myCanvas.drawLine(50, ground, 550, ground);
-
-        // create and show the balls
-        BouncingBall ball = new BouncingBall(50, 50, 16, Color.BLUE, ground, myCanvas);
-        ball.draw();
-        BouncingBall ball2 = new BouncingBall(70, 80, 20, Color.RED, ground, myCanvas);
-        ball2.draw();
-
-        // make them bounce
-        boolean finished =  false;
-        while (!finished) {
-            myCanvas.wait(50);           // small delay
-            ball.move();
-            ball2.move();
-            // stop once ball has travelled a certain distance on x axis
-            if(ball.getXPosition() >= 550 || ball2.getXPosition() >= 550) {
-                finished = true;
-            }
         }
     }
 }
+    private void boxBounce(int numberOfBalls)
+    {
+        //draw rectangle box
+        myCanvas.drawRectangle(xPos, yPos, boxwidth, boxheight);
+        //loop to create the BouncingBall object and add them 
+        //to the balls HashSet
+        for(int i = 0; i< numberOfBalls; i++)
+        {
+            //define the x and y variables and call
+            //the randomPosition() method to initialize x and y
+            int x = randomPosition();
+            int y = randomPosition();
+            //pass x and y values to the BouncingBall constructer
+            BoxBall boxBall = new BoxBall
+            (x,y,16,randomColor(),
+            boxwidth,boxheight,myCanvas);
+            // add bounceBall object to the balls
+            balls.add(boxBall);
+            //call the draw() method of bounceBall object
+            boxBall.draw();
+        }
+    }
+    //randomPosition() method returns an int value
+    //this method creates a random position which lies between the 
+    //0 and top half of the screen
+    private int randomPosition()
+    {
+        //get the half of the height of the myCanvas
+        int pos = (int) (boxheight);
+        //using the pos value generate the random value and 
+        //return the value.
+        return randomGenerator.nextInt(pos);
+    }
+        private Color randomColor()
+        {
+        Random rand = new Random();
+       float r = (rand.nextFloat())*.95f;
+       float g = rand.nextFloat()*.95f;
+       float b = rand.nextFloat()*.95f;
+        Color randomColor = new Color(r,g,b);
+        return randomColor;
+        
+        
+    }
+}
+
+

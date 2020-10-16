@@ -14,8 +14,7 @@ public class Canvas
  * @version 2016.02.29
  */
 
-public class Canvas
-{
+
     private JFrame frame;
     private CanvasPane canvas;
     private Graphics2D graphic;
@@ -143,7 +142,7 @@ public class Canvas
         graphic.drawRect (x1, y1, width, height) ;
         canvas.repaint() ; 
     }
-}
+
 
     /**
      * Erase the whole canvas.
@@ -371,6 +370,8 @@ public class Canvas
             g.drawImage(canvasImage, 0, 0, null);
         }
     }
+}
+
 
 
     
